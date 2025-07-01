@@ -77,3 +77,43 @@ Since this is more challenging, we need to abstract the values. Our example
 analysis checks if programs may have division by zero errors.
 
 [Markdown Export](rendered/6%20Abstract%20Interpretation.md)
+
+
+
+### 7: Interprocedural analysis
+
+This chapter continues the zero-analysis example, but considers what happens
+if you have functions that call other functions. We can either assume a
+function call can return anything, or we have to make our analysis
+interprocedural. This causes some challenges, for example if the same
+method is called from multiple locations. We counter this problem by making
+our analysis context-sensitive (using cloning in the example).
+
+[Markdown Export](rendered/7%20Interprocedural%20Analysis.md)
+
+
+### 8: Program Slicing
+
+In this chapter we revisit control dependencies, and look at an alternative
+way to calculate them using the dominance frontier (a concept used for
+creating static single assignment form). By combining data and control
+dependencies, we can create the program dependence graph. This can be used
+to _slice_ programs, i.e., extract subsets of the program that are relevant
+for a given target slicing criterion. Since the examples are analysing Java
+code, the notebook focuses only on static slicing, although the concepts
+generalise well to dynamic slicing as covered in the lecture.
+
+[Markdown Export](rendered/8%20Program%20Dependence.md)
+
+
+### 9: Dynamic Analysis
+
+All previous chapters considered static analysis, now we move on to dynamic
+analysis. We start analysing Python code, since this can be executed easily
+within the notebooks. We consider two alternative ways to instrument
+programs such that we can create execution traces: (1) Modifying ASTs, and
+(2) using the VM's tracing functionality. Using these instrumentation
+approaches we implement a range of different example dynamic analyses.
+
+[Markdown Export](rendered/9%20Dynamic%20Analysis.md)
+
